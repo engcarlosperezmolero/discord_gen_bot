@@ -179,7 +179,8 @@ class Questions(commands.Cog):
     async def pin_button(self, ctx):
         """Pins a message with the Ask a Question button"""
         view = QuestionView()
-        await ctx.send("Got a question? Click below!", view=view)
+        msg = await ctx.send("Got a question? Click below!", view=view)
+        await msg.pin()
 
 
 async def setup(bot):
